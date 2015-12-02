@@ -2,7 +2,7 @@
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 <script>
-  var jQueryScriptOutputted = false;
+  var jQueryScriptOutputted = jQueryScriptOutputted || false;
   function initJQuery() {
     if (typeof (jQuery) == 'undefined') {
       if (!jQueryScriptOutputted) {
