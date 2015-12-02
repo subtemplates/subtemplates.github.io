@@ -1,0 +1,68 @@
+<style>
+  .details-apply {
+      cursor: pointer;
+          text-decoration: underline;
+	    }
+	      #popup-box {
+	          bottom: 0;
+		      display: none;
+		          font-size: 0;
+			      left: 0;
+			          line-height: normal;
+				      position: fixed;
+				          right: 0;
+					      text-align: center;
+					          top: 0;
+						      z-index: 10000;
+						        }
+							  #popup-box::before {
+							      content: '';
+							          display: inline-block;
+								      height: 100%;
+								          vertical-align: middle;
+									      margin-left: -1px;
+									        }
+										  #popup-box_wrapper {
+										      background: #ffffff;
+										          border: 1px solid #000;
+											      color: #000000;
+											          display: inline-block;
+												      font-family: arial, sans-serif;
+												          font-size: 12px;
+													      font-style: normal;
+													          max-height: 98%;
+														      max-width: 300px;
+														          overflow-y: auto;
+															      padding: 10px;
+															          text-align: left;
+																      text-shadow: none;
+																          vertical-align: middle;
+																	      width: 90%;
+																	        }
+																		  #popup-box_wrapper a {
+																		      color: #0000FF;
+																		          display: inline-block;
+																			      font-size: 12px;
+																			          font-family: arial, sans-serif;
+																				    }
+																				      #popup-box header {
+																				          background: #FFF;
+																					      border: 0;
+																					          box-shadow: none;
+																						      display: block;
+																						          font-size: 0;
+																							      margin-bottom: 5px;
+																							          padding: 0;
+																								      text-align: right;
+																								          width: 100%;
+																									    }
+																									    </style>
+																									    <div id="popup-box">
+																									      <div id="popup-box_wrapper">
+																									          <header>
+																										        <button type="button">Close</button>
+																											    </header>
+																											        <section id="popup-box_content"></section>
+																												  </div>
+																												  </div>
+																												  <script>var popup = document.getElementById('popup-box'),da = document.getElementsByClassName('details-apply');function close(){ popup.style.display = 'none'; }document.getElementById('popup-box_wrapper').onmouseleave=close;document.querySelector('#popup-box button').onclick=close;Array.prototype.slice.call(da).forEach(function(details){ details.onclick = function(e){ e.preventDefault();popup.style.display = 'block'; }; });document.getElementById('popup-box_content').innerHTML = document.getElementById('disclosure').innerHTML;</script>
