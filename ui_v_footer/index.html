@@ -1,0 +1,82 @@
+<style>
+	.vente-footer {
+		font-size: 10pt;
+		margin: 0 auto;
+		max-width: 1000px;
+		text-align: center;
+	}
+	.supportLink {
+		display: inline-block;
+		margin: 8pt 5pt;
+	}
+	@media screen and (max-width: 768px) {
+		.vente-footer {
+			margin-top: 150%;
+		}
+	}
+</style>
+<div class="vente-footer">
+	<div class="vente-disclaimer">NO PURCHASE IS NECESSARY TO WIN or to participate in this survey. Void where prohibited by law. Open to legal residents of the United States (D.C.) who are eighteen (18) years of age or older. For official rules, including odds and prize description see <a href="/redeem.htm?promo_name={PROMO_NAME}name&catalog_id={catalog_id}" target="_blank">Official Rules.</a> <span id="sweepstakes-value"></span> Illustrations of prizes, logos or trademarks do not imply endorsement by the manufacturers or owners of such marks. For alternative method of entry, see Official Rules. <span id="end-date"></span></div>
+	<nav class="vente-nav">
+		<div class="optional supportLink">
+			<a href="/info.htm?tp=faq&promo_name={PROMO_NAME}name&catalog_id={catalog_id}" target="_blank">FAQ</a>
+		</div>
+		<div class="supportLink">
+			<a href="/testimonials.htm?promo_name={PROMO_NAME}name&catalog_id={catalog_id}" target="_blank">Winners</a>
+		</div>
+		<div class="supportLink">
+			<a href="/suppress.htm?tp=con&promo_name={PROMO_NAME}name&catalog_id={catalog_id}" target="_blank">Contact Us</a>
+		</div>
+		<div class="supportLink">
+			<a href="/redeem.htm?promo_name={PROMO_NAME}name&catalog_id={catalog_id}" target="_blank">Rules</a>
+		</div>
+		<div class="supportLink">
+			<a href="/info.htm?tp=privacy&promo_name={PROMO_NAME}name&catalog_id={catalog_id}" target="_blank">Privacy</a>
+		</div>
+		<div class="optional supportLink">
+			<a href="/company.htm?tp=products&promo_name={PROMO_NAME}&catalog_id={catalog_id}&wrap=0" target="_blank">About Us</a>
+		</div>
+	</nav>
+</div>
+<script>
+	(function() {
+		function getLastDay(){
+	    return new Date('{year}', '{month}', 0).getDate();
+		}
+		function getQuarter(current_month) {
+			switch(current_month) {
+				case 1:
+				case 2:
+				case 3:
+					return 3;
+				case 4:
+				case 5:
+				case 6:
+					return 6;
+				case 7:
+				case 8:
+				case 9:
+					return 9;
+				case 10:
+				case 11:
+				case 12:
+					return 12;
+			}
+		}
+	  function getEndDate() {
+			switch ('{555}') {
+				case '100':
+				case '3500':
+					return getQuarter('{month}') + '/' + getLastDay() + '/{year}';
+				case '1500':
+					return '{month}/' + getLastDay() + '/{year}';
+			}
+		}
+		document.getElementById('end-date').innerHTML = 'Ends ' + getEndDate() + '.';
+		if ('{SITE_NAME}'.toLowerCase() === 'therealsweeps') {
+			Array.prototype.forEach.call(document.querySelectorAll('.optional.supportLink'), function(element) {
+		  	element.remove();
+			});
+		}
+	})();
+</script>
