@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			}
 			var client = new XMLHttpRequest();
 			client.onload = handler;
-			client.open("GET", "http://subtemplates.github.io/"+subtemplate.innerHTML);
+			client.open("GET", "https://rawgit.com/subtemplates/subtemplates.github.io/master/"+subtemplate.innerHTML+"/index.html");
 			client.send();
 		})(subtemplate);
 	});
