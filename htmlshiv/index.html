@@ -38,7 +38,14 @@
     if (typeof (jQuery) == 'undefined') {
       if (!jQueryScriptOutputted) {
         jQueryScriptOutputted = true;
-        document.write('<scr' + 'ipt src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></scr'+'ipt>');
+        var client = new XMLHttpRequest();
+        client.onload = function() {
+          var script = document.createElement('script');
+          script.innerHTML = this.responseText;
+          document.querySelector('head').appendChild(script);
+        };
+        client.open("GET", "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js");
+        client.send();
       }
       setTimeout("initJQuery()", 50);
     }
