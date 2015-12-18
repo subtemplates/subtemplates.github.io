@@ -1,3 +1,4 @@
+var imagesToken = 'http://i.pcp003.com';
 document.addEventListener('DOMContentLoaded', function() {
 	var subtemplates = document.querySelectorAll('.g2-template');
 	Array.prototype.forEach.call(subtemplates, function(subtemplate) {
@@ -5,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			function handler() {
 				if(this.status == 200) {
 					var tmp = document.createElement('div');
-					tmp.innerHTML = this.responseText;
+					tmp.innerHTML = this.responseText.replace(/{IMAGES}/g, imagesToken);
 					subtemplate.outerHTML = tmp.innerHTML;
 					if(tmp.querySelector('script')) {
 						var scripts = tmp.querySelectorAll('script');
