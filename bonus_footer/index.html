@@ -1,0 +1,63 @@
+<footer>
+  {IC_NAV}
+  <!--<a id="previousLink">PREVIOUS</a>-->
+  <button id="nextLink"><span>CONTINUE WHEN FINISHED</span></button>
+</footer>
+<script>
+  var jQueryScriptOutputted = false;
+  function initJQuery() {
+    //if the jQuery object isn't available
+    if (typeof (jQuery) == 'undefined') {
+      if (!jQueryScriptOutputted) {
+        //only output the script once..
+        jQueryScriptOutputted = true;
+        //output the script (load it from google api)
+        document.write('<scr' + 'ipt type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></scr' + 'ipt>');
+      }
+      setTimeout("initJQuery()", 50);
+    }
+  }
+  initJQuery();
+</script>
+<script type="text/javascript">
+  function showSubmitLoader() {
+    var div = $('<div/>').attr('id','formSubmitLoad').html('<img src="{IMAGES}/media/loader.gif" /><br><p>Loading please wait</p>');
+    $(".ss_submit").prepend(div);
+    setTimeout(function() {
+      $("#formSubmitLoad").remove();
+    },15000);
+  }
+  function validateSubmit() {
+    showSubmitLoader();
+    document.fm.submit();
+  }
+  function validateForm() {
+    validateSubmit();
+  }
+
+  //$('.bnAd:first .buttonTxt').appendTo('#nextLink');
+  $('.bnAdLink a').text('Claim Your Bonus');
+
+  var pages = new Array('Gold','Silver','Platinum');
+
+  for(var i = 0; i < pages.length; i++) {
+    $('#icnavigation a:contains("' + pages[i] + '")').addClass('' + pages[i].toLowerCase() + '');
+  }
+
+  $('.bnAd:nth-child(6n+1)').addClass('n-one');
+  $('.bnAd:nth-child(6n+2)').addClass('n-two');
+  $('.bnAd:nth-child(6n+3)').addClass('n-three');
+  $('.bnAd:nth-child(6n+4)').addClass('n-four');
+  $('.bnAd:nth-child(6n+5)').addClass('n-five');
+  $('.bnAd:nth-child(6n+6)').addClass('n-six');
+
+  $('#nextLink').click(function() {
+    window.onbeforeunload = null;
+    validateForm();
+  });
+  $('#previousLink').click(function() {
+    window.onbeforeunload = null;
+    x_cmd=0;
+    window.history.back(-1);
+  });
+</script> 

@@ -1,0 +1,45 @@
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="{IMAGES}/t/17745/matchMedia.js" type="text/javascript"></script>
+<script src="{IMAGES}/t/17745/addListener.js" type="text/javascript"></script>
+<script src="{IMAGES}/t/17757/enquire.js" type="text/javascript"></script>
+<script language="javascript">
+  var x_cmd=1;
+  function confirmExit()
+  {
+    if (x_cmd == 1)
+    {
+      return "Wait! Continue to view your BONUS Gifts!";
+    }
+  }
+
+  function x_win()
+  {
+    if(x_cmd==1)
+    {
+      exit_url = '{IC_NAVIGATION_LINK_1}' == '' ? '{X_ADDR}' : '{IC_NAVIGATION_LINK_1}';
+      if (exit_url != '')
+      {
+        exit_win_ref = window.open(exit_url, '_blank', 'top=0,left=0,screenX=0,screenY=0,scrollbars,width=850,height=600');
+        exit_win_ref.focus();
+      }
+    }
+  }
+  window.onbeforeunload=confirmExit;
+  window.onunload=x_win;
+  $(document).ready(function() {
+    enquire.register("screen and (max-width: 1023px)", {
+      match : function() {
+        $('.icAdTitle').each(function() {
+          var that = $(this);
+          that.parents('.icAd').find('.icAdImage').before(that);
+        });
+      },
+      unmatch : function() {
+        $('.icAdTitle').each(function() {
+          var that = $(this);
+          that.parents('.icAd').find('.icAdImage').after(that);
+        });
+      }
+    });
+  });
+</script>

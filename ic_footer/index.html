@@ -1,0 +1,123 @@
+<footer>
+  <button type="button" id="previousLink" class="icPrevious{PAGE_NUM}">Previous</button>
+  <p class="comOffer">After You've Completed {IC_SS_REQUIREMENT} offer<span class="myOffer">s</span></p>
+  <button type="button" id="nextLink"><span class="iccontinue">Continue</span><span class="icfinish">Finished</span></button>
+  <!-- DISCLAIMER START -->
+  <div id="disclaimer_container">
+    <p>
+      This promotion is conducted exclusively by {SITE_NAME}.  To receive the Gift you must:  1) be a US resident, 18 or older and complete the registration process with your valid contact information; 2) complete {OFFER_REQUIREMENTS_LINKS} Sponsor Offers within 60 days of your Program Sign-Up Date (offer availability will vary); 3) not cancel your participation in more than 2 Sponsor Offers within 30 days of the Sponsor Offer Initial Transaction Date (the Cancellation Limitation); 4) complete all <a HREF="info.htm?tp=tos&promo_name={PROMO_NAME}&gift={GIFT_ID}&catalog_id={catalog_id}#prog_req" TARGET="_blank" onClick="window.open('info.htm?tp=tos&promo_name={PROMO_NAME}&gift={GIFT_ID}&catalog_id={catalog_id}#prog_req','_blank','resizable=yes,scrollbars=yes,toolbar=no,menubar=yes,width=550,height=400');return false;make_x_win=0;">Program Requirements</a>, including the Gift Redemption process, within 180 days of your Program Sign-Up Date. You can receive the Gift at no cost by completing free trial Sponsor Offers and/or by following the Refer-A-Friend Offer requirements; otherwise some Sponsor Offers may require a purchase to qualify.  Gifts are shipped to the postal address provided during registration.  Limit one Gift per household per year. Void where prohibited.  Note:  Promotion <a HREF="info.htm?tp=tos&promo_name={PROMO_NAME}&gift={GIFT_ID}&catalog_id={catalog_id}#prog_req" TARGET="_blank" onClick="window.open('info.htm?tp=tos&promo_name={PROMO_NAME}&gift={GIFT_ID}&catalog_id={catalog_id}#prog_req','_blank','resizable=yes,scrollbars=yes,toolbar
+=no,menubar=yes,width=550,height=400');return false;make_x_win=0;">Terms and Conditions</a> prevail over Sponsor Offer terms and conditions.
+    </p>
+    <p>
+      <a HREF="/redeem.htm?promo_name={PROMO_NAME}&catalog_id={catalog_id}&gift={GIFT_ID}" TARGET="_blank" onClick="window.open('/redeem.htm?promo_name={PROMO_NAME}&catalog_id={catalog_id}&gift={GIFT_ID}','_blank','resizable=yes,scrollbars=yes,toolbar=no,menubar=yes,width=550,height=400');return false;make_x_win=0;">Check Gift Status</a>
+			- <a HREF="/info.htm?tp=faq&promo_name={PROMO_NAME}&catalog_id={catalog_id}&gift={GIFT_ID}" TARGET="_blank" onClick="window.open('/info.htm?tp=faq&promo_name={PROMO_NAME}&catalog_id={catalog_id}&gift={GIFT_ID}','_blank','resizable=yes,scrollbars=yes,toolbar=no,menubar=yes,width=550,height=400');return false;make_x_win=0;">Help</a>
+			- <a HREF="/info.htm?tp=privacy&promo_name={PROMO_NAME}&catalog_id={catalog_id}&gift={GIFT_ID}" TARGET="_blank" onClick="window.open('/info.htm?tp=privacy&promo_name={PROMO_NAME}&catalog_id={catalog_id}&gift={GIFT_ID}','_blank','resizable=yes ,scrollbars=yes,toolbar=no,menubar=yes,width=550,height=450');return false;make_x_win=0;">Privacy Policy</a>
+			- <a HREF="/info.htm?tp=tos&promo_name={PROMO_NAME}&catalog_id={catalog_id}&gift={GIFT_ID}" TARGET="_blank" onClick="window.open('/info.htm?tp=tos&promo_name={PROMO_NAME}&catalog_id={catalog_id}&gift={GIFT_ID}','_blank','resizable=yes,scrollbars=yes,toolbar=no,menubar=yes,width=550,height=400');return false;make_x_win=0;">Terms &amp; Conditions</a>
+			- <a HREF="/suppress.htm?user_ref_id={USER_REF_ID}&promo_name={PROMO_NAME}&catalog_id={catalog_id}&gift={GIFT_ID}" TARGET="_blank" onClick="window.open('/suppress.htm?user_ref_id={USER_REF_ID}&promo_name={PROMO_NAME}&catalog_id={catalog_id}&gift={GIFT_ID}','_blank','resizable=yes,scrollbars=yes,toolbar=no,menubar=yes,width=550,height=400');return false;make_x_win=0;">Unsubscribe</a>
+			- <a HREF="/info.htm?tp=con&promo_name={PROMO_NAME}&catalog_id={catalog_id}&gift={GIFT_ID}" TARGET="_blank" onClick="window.open('/info.htm?tp=con&promo_name={PROMO_NAME}&catalog_id={catalog_id}&gift={GIFT_ID}','_blank','resizable=yes,scrollbars=yes,toolbar=no,menubar=yes,width=550,height=400');return false;make_x_win=0;">Contact Us</a>
+    </p>
+    <p>
+      Copyright &copy; {YEAR} {SITE_NAME}. All rights reserved.
+    </p>
+  </div>
+  <!-- DISCLAIMER END -->
+</footer>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $(window).on('resize', function() {
+      if($(this).width() < 1025) {
+        if(!$('footer > :nth-child(1)').is('p.comOffer')) {
+          $('p.comOffer').prependTo('footer').after($('#nextLink'));
+        }
+      }else{
+        if(!$('footer > :nth-child(1)').is('#previousLink')) {
+          $('#previousLink').after($('p.comOffer'));
+          $('p.comOffer').after($('#nextLink'));
+        }
+      }
+    }).trigger('resize');
+    if($('.pgname:first-of-type').text() == "Platinum") {
+      $('#instructions').text('Last Step!');
+    }
+    $('#wm_desktop').show();
+    $('#wm_mobile').show();
+  });
+
+  function showSubmitLoader() {
+    var div = $('<div/>').attr('id','formSubmitLoad').html('<img src="{IMAGES}/media/loader.gif" /><br><p>Loading please wait</p>');
+    $(".ss_submit").prepend(div);
+    setTimeout(function() {
+      $("#formSubmitLoad").remove();
+    },15000);
+  }
+  function validateSubmit() {
+    showSubmitLoader();
+    $('form').submit();
+  }
+  /*function validateForm() {
+    validateSubmit();
+  }*/
+
+  $('.icAd a').click(function() {
+    x_cmd=0;
+  });
+
+  $('#nextLink').click(function() {
+    window.onbeforeunload = null;
+    x_cmd=0;
+    validateSubmit();
+  });
+  $('#previousLink').click(function() {
+    window.onbeforeunload = null;
+    x_cmd=0;
+
+
+    if ($('.pgname').html() == 'Silver') {
+
+      window.history.back(-1);
+
+    } else if ($('.pgname').html() == 'Gold') {
+
+      window.location.href='{IC_NAVIGATION_LINK_1}';
+
+    } else if ($('.pgname').html() == 'Platinum') {
+
+      window.location.href='{IC_NAVIGATION_LINK_2}';
+
+
+    } else {
+
+      window.history.back(-1);
+
+    }
+
+
+  });
+
+  $('.icPrevious1').hide();
+
+  if( '{IC_SS_REQUIREMENT}' == '1') {
+    $('span.myOffer').hide();
+  } else {
+    $('span.myOffer').show();
+  }
+
+  if( '{requirements}'.indexOf(',') === -1) {
+    $('span.pgname').text('Silver');
+  }
+  else {
+    $('span.pgname').text('{IC_SS_PAGE_NAME}');
+  }
+
+  if ('{IC_SS_PAGE_NAME}' == 'Platinum') {
+    $('.congrat').hide();
+    $('.laststep').show();
+    $('.iccontinue').hide();
+    $('.icfinish').show();
+  } else {
+    $('.congrat').show();
+    $('.laststep').hide();
+    $('.iccontinue').show();
+    $('.icfinish').hide()
+  }
+</script>

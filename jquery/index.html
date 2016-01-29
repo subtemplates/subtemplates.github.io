@@ -1,0 +1,20 @@
+<script>
+  var jQueryScriptOutputted = false;
+  function initJQuery() {
+    //if the jQuery object isn't available
+    if (typeof (jQuery) == 'undefined') {
+      if (!jQueryScriptOutputted) {
+        //only output the script once..
+        jQueryScriptOutputted = true;
+        //output the script (load it from google api)
+        /*var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js';
+        document.getElementsByTagName('head')[0].appendChild(script);*/
+        document.write('<scr' + 'ipt src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></scr'+'ipt>');
+      }
+      setTimeout("initJQuery()", 50);
+    }
+  }
+  initJQuery();
+</script>
