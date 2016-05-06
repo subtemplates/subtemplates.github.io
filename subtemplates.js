@@ -22,7 +22,8 @@ document.addEventListener('DOMContentLoaded', function() {
 			}
 			var client = new XMLHttpRequest();
 			client.onload = handler;
-			client.open("GET", "https://cdn.rawgit.com/subtemplates/subtemplates.github.io/master/"+subtemplate.innerHTML+"/index.html");
+			//client.open("GET", "https://cdn.rawgit.com/subtemplates/subtemplates.github.io/master/"+subtemplate.innerHTML+"/index.html");
+			client.open("GET", "https://rawgit.com/subtemplates/subtemplates.github.io/master/"+subtemplate.innerHTML+"/index.html");
 			client.send();
 		})(subtemplate);
 	});
