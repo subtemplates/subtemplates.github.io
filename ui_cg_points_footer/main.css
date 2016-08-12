@@ -1,0 +1,35 @@
+#fulfillment, #service, #disclaimer-partner {
+  display: none;
+}
+
+.clickgen-footer {
+  display: block;
+  font-family: arial, sans-serif;
+  font-size: 9pt;
+  margin: 10pt auto;
+  max-width: 1140px;
+  width: 98%;
+}
+
+.clickgen-footer div {
+  display: block;
+  margin: 5pt 0;
+}
+
+.clickgen-footer .clickgen-footer_nav, .clickgen-footer .clickgen-footer_copyright {
+  text-align: center;
+}
+
+.clickgen-footer .clickgen-footer_nav a {
+  display: inline-block;
+}
+
+@media screen and (max-width: 768px) {
+  .clickgen-footer {
+    margin: 150% auto 5pt;
+    text-align: justify;
+  }
+  .clickgen-footer .clickgen-footer_nav a {
+    padding: 3pt 0;
+  }
+}

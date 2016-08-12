@@ -1,46 +1,31 @@
 <!-- if (broken) { check_style_guide(); blame_g2(); } -->
-<style>
-  #clickgen-footer {
-    display: block;
-    font-family: arial, sans-serif;
-    font-size: 9pt;
-    margin: 10pt auto;
-    max-width: 1140px;
-    width: 98%;
-  }
-  #clickgen-footer div {
-    display: block;
-    margin: 5pt 0;
-  }
-  #clickgen-footer nav {
-    text-align: center;
-  }
-  #clickgen-footer nav a {
-    display: inline-block;
-  }
-  @media screen and (max-width: 768px) {
-    #clickgen-footer {
-      margin: 150% auto 5pt;
-      text-align: justify;
-    }
-    #clickgen-footer nav a {
-      padding: 3pt 0;
-    }
-  }
-</style>
-<div id="clickgen-footer">
-  <div id="giftProgram">
-    <strong>{SITE_NAME} Gift Program is not endorsed, sponsored by or affiliated with <span id="partners"></span><span id="or">, or</span> any other merchants listed above. Such terms are registered trademarks of their respective owners.</strong>
+<div class="clickgen-footer">
+  <div class="clickgen-footer_service"></div>
+  <div class="clickgen-footer_fulfillment"></div>
+  <div class="clickgen-footer_gift-program">
+    <strong>{SITE_NAME} Gift Program is not endorsed, sponsored by or affiliated with <span class="clickgen-footer_partners"></span><span class="clickgen-footer_or">, or</span> any other merchants listed above. Such terms are registered trademarks of their respective owners.</strong>
   </div>
-  <div id="disclosure">Purchase Requirements. Earn 50 points and claim your incentive. Earn 5 points for providing your registration information, 10 points for providing survey responses, 15 points for viewing optional offers and the final 20 points for completing the requisite number of Silver, Gold and Platinum offers. This promotion is conducted exclusively by {SITE_NAME}.  To receive the Gift you must:  1) be a US resident, 18 or older and complete the registration process with your valid contact information; 2) complete {OFFER_REQUIREMENTS_LINKS} Sponsor Offers within 60 days of your Program Sign-Up Date (offer availability will vary); 3) not cancel your participation in more than 2 Sponsor Offers within 30 days of the Sponsor Offer Initial Transaction Date (the Cancellation Limitation); 4) complete all <a href="info.htm?tp=tos&promo_name={PROMO_NAME}&catalog_id={catalog_id}#prog_req" target="_blank" onclick="window.open('info.htm?tp=tos&promo_name={PROMO_NAME}&catalog_id={catalog_id}#prog_req','_blank','resizable=yes,scrollbars=yes,toolbar=no,menubar=yes,width=550,height=400');return false;make_x_win=0;">Program Requirements</a>, including the Gift Redemption process, within 180 days of your Program Sign-Up Date. You can receive the Gift at no cost by completing free trial Sponsor Offers and/or by following the Refer-A-Friend Offer requirements; otherwise some Sponsor Offers may require a purchase to qualify.  Gifts are shipped to the postal address provided during registration.  Limit one Gift per household per year. Void where prohibited.</div>
-  <nav align="center">
-    <a href="/redeem.htm?promo_name={PROMO_NAME}&catalog_id={catalog_id}&gift={GIFT_ID}" target="_blank" onclick="window.open('/redeem.htm?promo_name={PROMO_NAME}&catalog_id={catalog_id}&gift={GIFT_ID}','_blank','resizable=yes,scrollbars=yes,toolbar=no,menubar=yes,width=550,height=400');return false;make_x_win=0;">Check Gift Status</a>
-    - <a href="/info.htm?tp=faq&promo_name={PROMO_NAME}&catalog_id={catalog_id}&gift={GIFT_ID}" target="_blank" onclick="window.open('/info.htm?tp=faq&promo_name={PROMO_NAME}&catalog_id={catalog_id}&gift={GIFT_ID}','_blank','resizable=yes,scrollbars=yes,toolbar=no,menubar=yes,width=550,height=400');return false;make_x_win=0;">Help</a>
-    - <a href="/info.htm?tp=privacy&promo_name={PROMO_NAME}&catalog_id={catalog_id}&gift={GIFT_ID}" target="_blank" onclick="window.open('/info.htm?tp=privacy&promo_name={PROMO_NAME}&catalog_id={catalog_id}&gift={GIFT_ID}','_blank','resizable=yes ,scrollbars=yes,toolbar=no,menubar=yes,width=550,height=450');return false;make_x_win=0;">Privacy Policy</a>
-    - <a href="/info.htm?tp=tos&promo_name={PROMO_NAME}&catalog_id={catalog_id}&gift={GIFT_ID}" target="_blank" onclick="window.open('/info.htm?tp=tos&promo_name={PROMO_NAME}&catalog_id={catalog_id}&gift={GIFT_ID}','_blank','resizable=yes,scrollbars=yes,toolbar=no,menubar=yes,width=550,height=400');return false;make_x_win=0;">Terms &amp; Conditions</a>
-    - <a href="/suppress.htm?user_ref_id={USER_REF_ID}&promo_name={PROMO_NAME}&catalog_id={catalog_id}&gift={GIFT_ID}" target="_blank" onclick="window.open('/suppress.htm?user_ref_id={USER_REF_ID}&promo_name={PROMO_NAME}&catalog_id={catalog_id}&gift={GIFT_ID}','_blank','resizable=yes,scrollbars=yes,toolbar=no,menubar=yes,width=550,height=400');return false;make_x_win=0;">Unsubscribe</a>
-    - <a href="/info.htm?tp=con&promo_name={PROMO_NAME}&catalog_id={catalog_id}&gift={GIFT_ID}" target="_blank" onclick="window.open('/info.htm?tp=con&promo_name={PROMO_NAME}&catalog_id={catalog_id}&gift={GIFT_ID}','_blank','resizable=yes,scrollbars=yes,toolbar=no,menubar=yes,width=550,height=400');return false;make_x_win=0;">Contact Us</a>
+  <div class="clickgen-footer_disclosure">Purchase Requirements. Earn 50 points and claim your incentive. Earn 5 points for providing your registration information, 10 points for providing survey responses, 15 points for viewing optional offers and the final 20 points for completing the requisite number of Silver, Gold and Platinum offers. This promotion is conducted exclusively by {SITE_NAME}. To receive the Gift you must: 1) be a US resident, 18 or older and complete the registration process with your valid contact information; 2) complete {OFFER_REQUIREMENTS_LINKS} Sponsor Offers within 60 days of your Program Sign-Up Date (offer availability will vary); 3) not cancel your participation in more than 2 Sponsor Offers within 30 days of the Sponsor Offer Initial Transaction Date (the Cancellation Limitation); 4) complete all <a href="info.htm?tp=tos&promo_name={PROMO_NAME}&catalog_id={catalog_id}#prog_req" target="_blank">Program Requirements</a>, including the Gift Redemption process, within 180 days of your Program Sign-Up Date. You can receive the Gift at no cost by completing free trial Sponsor Offers and/or by following the Refer-A-Friend Offer requirements; otherwise some Sponsor Offers may require a purchase to qualify. Gifts are shipped to the postal address provided during registration. Limit one Gift per household per year. Void where prohibited.</div>
+  <nav class="clickgen-footer_nav">
+    <a href="/redeem.htm?promo_name={PROMO_NAME}&catalog_id={catalog_id}&gift={GIFT_ID}" target="_blank">Check Gift Status</a> -
+    <a href="/info.htm?tp=faq&promo_name={PROMO_NAME}&catalog_id={catalog_id}&gift={GIFT_ID}" target="_blank">Help</a> -
+    <a href="/info.htm?tp=privacy&promo_name={PROMO_NAME}&catalog_id={catalog_id}&gift={GIFT_ID}" target="_blank">Privacy Policy</a> -
+    <a href="/info.htm?tp=tos&promo_name={PROMO_NAME}&catalog_id={catalog_id}&gift={GIFT_ID}" target="_blank">Terms &amp; Conditions</a> -
+    <a href="/suppress.htm?user_ref_id={USER_REF_ID}&promo_name={PROMO_NAME}&catalog_id={catalog_id}&gift={GIFT_ID}" target="_blank">Unsubscribe</a> -
+    <a href="/info.htm?tp=con&promo_name={PROMO_NAME}&catalog_id={catalog_id}&gift={GIFT_ID}" target="_blank">Contact Us</a>
   </nav>
-  <div id="copyright" align="center">Copyright &copy; <span id="year">{year}</span> {SITE_NAME}. All rights reserved.</div>
+  <div class="clickgen-footer_copyright">Copyright &copy; <span id="year">{year}</span> {SITE_NAME}. All rights reserved.</div>
 </div>
-<script id="ui_cg_footer">if(document.getElementById('service')) document.getElementById('clickgen-footer').insertBefore(document.getElementById('service'),document.getElementById('giftProgram')); if(document.getElementById('fulfillment')) document.getElementById('clickgen-footer').insertBefore(document.getElementById('fulfillment'),document.getElementById('giftProgram')); if(document.querySelector('[data-id="disclaimer"]')) document.getElementById('partners').appendChild(document.querySelector('[data-id="disclaimer"]')); if(document.getElementById('partners').innerHTML === '') document.getElementById('or').parentNode.removeChild(document.getElementById('or'));document.getElementById('ui_cg_footer').parentNode.removeChild(document.getElementById('ui_cg_footer'));</script>
+<script class="ui_cg_points_footer">
+  if (!window.ui_cg_points_footer) {
+    var body = window.body || document.getElementsByTagName('body')[0];
+    var ui_cg_points_footer = document.getElementsByClassName('clickgen-footer');
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'main.css';
+    body.appendChild(link);
+    var script = document.createElement('script');
+    script.src = 'main.js';
+    body.appendChild(script);
+  }
+</script>
